@@ -5,4 +5,4 @@ spring:
 
 kakao:
   api:
-    key: 12345678
+    key: 123456

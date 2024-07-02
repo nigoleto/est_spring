@@ -10,7 +10,14 @@ public class BasicApplication {
 
     public static void main(String[] args) {
 
-		SpringApplication.run(BasicApplication.class, args);
+        Quiz quiz = new Quiz("현창님은 펠리컨한테 잡아먹혔다?","맞다");
+        QuizView quizView = new QuizView();
+        QuizController quizController = new QuizController(quiz, quizView);
+
+        quizController.startQuiz();
+
+
+//		SpringApplication.run(BasicApplication.class, args);
     }
 
 }
