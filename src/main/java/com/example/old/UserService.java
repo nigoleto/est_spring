@@ -1,7 +1,6 @@
-package com.example.basic;
+package com.example.old;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

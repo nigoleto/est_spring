@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: basic-service
-
-
-kakao:
-  api:
-    key: 123456

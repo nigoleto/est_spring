@@ -1,30 +1,31 @@
 package com.example.basic;
 
-import jakarta.servlet.ServletException;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.DispatcherServlet;
 
-import java.io.IOException;
+import java.util.TimeZone;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.day0709")
 public class BasicApplication {
 
+    @Value("${server.port}")
+    private int port;
 
-    public static void main(String[] args) throws ServletException, IOException {
-        DispatcherServlet dispatcherServlet = new DispatcherServlet();
-        String url = "/hello";
+    @Value("${spring.application.name}")
+    private String appName;
 
-        MockHttpServletRequest request = new MockHttpServletRequest(url);
-        MockHttpServletResponse response = new MockHttpServletResponse();
+    @PostConstruct
+    public void printConfig() {
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+        System.out.println("포트번호: " + port);
+        System.out.println("애플리케이션 이름: " + appName);
+    }
 
-        dispatcherServlet.service(request, response);
-
-        System.out.println(response.getContent());
-        System.out.println("응답 내용" + response.getContent());
-
-//		SpringApplication.run(BasicApplication.class, args);
+    public static void main(String[] args) {
+		SpringApplication.run(BasicApplication.class, args);
     }
 
 }

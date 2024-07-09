@@ -1,4 +1,4 @@
-package com.example.basic;
+package com.example.old;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
