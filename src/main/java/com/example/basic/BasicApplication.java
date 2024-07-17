@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.TimeZone;
 
-@SpringBootApplication(scanBasePackages = "com.example.day0715")
+@SpringBootApplication(scanBasePackages = "com.example.day0717")
 public class BasicApplication {
 
     @Value("${server.port}")
